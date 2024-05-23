@@ -102,6 +102,6 @@ function upload()
 }
 
 function getEror() {
-    
+    echo"alpha";
 }
 ?>
