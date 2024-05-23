@@ -100,4 +100,8 @@ function upload()
         return $_FILES["photo"]["name"];
     }
 }
+
+function getEror() {
+    
+}
 ?>
