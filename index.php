@@ -1,5 +1,5 @@
-<?php 
-require "controller.php"; 
+<?php
+require "controller.php";
 $books = getAllBooks();
 ?>
 <!DOCTYPE html>
@@ -12,7 +12,6 @@ $books = getAllBooks();
     <script src="https://code.jquery.com/jquery-3.6.4.js"
         integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <style>
-      
         .active div:nth-child(1) {
             transform: rotate(45deg);
         }
@@ -55,7 +54,7 @@ $books = getAllBooks();
                             class="text-base text-white font-bold py-2 mx-8 group-hover:text-stone-200">My
                             add book</a>
                     </li>
-                   
+
                 </ul>
             </div>
             <div class="flex items-center px-4 lg:hidden">
@@ -78,15 +77,16 @@ $books = getAllBooks();
         <div class="wrapper mt-4 grid grid-cols-2 w-full gap-4 md:grid-cols-5">
             <?php for ($i = 0; $i < count($books); $i++) { ?>
                 <div class="card w-full bg-white p-2 rounded-lg" style="border: 2px solid black">
-                    <img src=<?= $books[$i]['photo'] ?>   class="m-auto w-[200px] h-[300px]" style="border: 1px solid black">
+                    <img src=<?= $books[$i]['photo'] ?> class="m-auto w-[200px] h-[300px]" style="border: 1px solid black">
                     <div class="mt-2 flex flex-col justify-center items-center">
                         <h2 class="text-xl font-bold m-auto"> <?= $books[$i]['title'] ?></h2>
-            
+
                         <a href="result.php?id=<?php echo $books[$i]["id"] ?>" target="blank">see details</a>
                     </div>
                     <div class="mt-2 flex flex-col justify-center items-center">
                         <button class="bg-yellow-300 w-1/2">Update</button><br>
-                        <button class="bg-red-500 w-1/2">Delete</button>
+                        <button class="bg-red-500 w-1/2"><a
+                                href="hapus.php?id=<?php echo $books[$i]["id"] ?>" onclick="return confirm('yakin?')">delete</a></button>
                     </div>
                 </div>
             <?php } ?>

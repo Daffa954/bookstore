@@ -101,7 +101,9 @@ function upload()
     }
 }
 
-function getEror() {
-    echo"alpha";
+function delete($id) {
+    $conn = bukaKonesi();
+    mysqli_query($conn, "DELETE FROM buku WHERE id = $id");
+    return mysqli_affected_rows($conn);
 }
 ?>
