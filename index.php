@@ -84,7 +84,7 @@ $books = getAllBooks();
                         <a href="result.php?id=<?php echo $books[$i]["id"] ?>" target="blank">see details</a>
                     </div>
                     <div class="mt-2 flex flex-col justify-center items-center">
-                        <button class="bg-yellow-300 w-1/2">Update</button><br>
+                        <button class="bg-yellow-300 w-1/2"><a href="update.php?id=<?php echo $books[$i]["id"] ?>" onclick="return confirm('yakin?')">Update</a></button><br>
                         <button class="bg-red-500 w-1/2"><a
                                 href="hapus.php?id=<?php echo $books[$i]["id"] ?>" onclick="return confirm('yakin?')">delete</a></button>
                     </div>

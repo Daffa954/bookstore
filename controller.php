@@ -106,4 +106,20 @@ function delete($id) {
     mysqli_query($conn, "DELETE FROM buku WHERE id = $id");
     return mysqli_affected_rows($conn);
 }
+
+function rubah($data, $id)
+{
+    global $conn;
+    $title = htmlspecialchars($data["title"]);
+    $category_id = htmlspecialchars($data["category_id"]);
+    $description = htmlspecialchars($data["description"]);
+    $author = htmlspecialchars($data["author"]);
+    $nidn = htmlspecialchars($data["nidn"]);
+    $photo = upload();
+    if(!$photo) {
+        return false;
+    }
+
+    
+}
 ?>
